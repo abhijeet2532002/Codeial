@@ -1,0 +1,9 @@
+1:- ) Github Auth
+    A:- ) client ID :  0c18b01dfd607e12da82
+    B:- ) client Key :  f0e18e3d172277488859203ec9e45560fd6b759a
+    C:- ) callback url :  https://localhost:9091/user/auth/github/callback
+
+2:- ) Googlw Auth
+    A:- ) client ID :  691149514357-ibn7lnbtk9gais6n0l5427jbn4li2rlb.apps.googleusercontent.com
+    B:- ) client Key :  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
+    C:- ) callback url :  https://localhost:9091/user/auth/github/callback

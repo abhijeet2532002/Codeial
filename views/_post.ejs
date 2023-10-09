@@ -1,0 +1,42 @@
+<li id="<%=posts._id %>" class="text-start border border-2 border-dark px-2 mb-1 rounded-3">
+
+    <blockquote class="blockquote m-0 px-2 fw-bolder">
+        <p class="d-inline">
+            <%= posts.msg %>
+        </p>
+    </blockquote>
+
+    <figcaption class="blockquote-footer text-end fw-bolder mb-2 px-2">
+        <small>
+            <% if (locals.user){ %>
+                <a class="toggle-like-button me-2 fw-bold fs-6" data-likes="<%= posts.likes.length %>"
+                    href="/likes/toggle/?id=<%=posts._id%>&type=Post">
+                    <%= posts.likes.length %> Likes
+                </a>
+                <% }else{ %>
+                    <%= posts.likes.length %> Likes
+                        <% } %>
+        </small>
+
+        <% if(locals.user.id==posts.user.id) { %>
+            <a class="btn btn-outline-danger me-2" href="/post/delete/<%= posts._id %>">Delete</a>
+            <% } %>
+                <%= posts.user.name %>
+    </figcaption>
+
+    <%- include('_comment') -%>
+
+        <div class="card border border-0 my-2">
+            <div class="card-body p-0">
+                <form action="/comment/create/<%= posts._id %>" method="post">
+                    <div class="input-group mb-2">
+                        <span class="input-group-text fw-bold fs-5">Comment : </span>
+                        <textarea class="form-control fw-bold" name="content" aria-label="With textarea"
+                            placeholder="Enter comment here ....."></textarea>
+                    </div>
+                    <button type="submit" class="me-1 btn btn-success fw-bold">Submit</button>
+                    <button type="reset" class="me-1 btn btn-warning fw-bold">Reset</button>
+                </form>
+            </div>
+        </div>
+</li>

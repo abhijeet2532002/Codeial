@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-6 m-auto">
+        <div class="card">
+            <div class="card-header text-center m-0 p-0">
+                <h4>Sign-Up</h4>
+            </div>
+            
+            <div class="card-body m-2 p-0">
+                <form action="/user/signUp" method="post">
+                    <div class="input-group mb-2">
+                        <span class="input-group-text fw-bold" id="inputGroup-sizing-default">Email Id:</span>
+                        <input type="email" class="form-control fw-bold" name="email" aria-label="Sizing example input"
+                            placeholder="Enter your emailId" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text fw-bold" id="inputGroup-sizing-default">Password:</span>
+                        <input type="password" class="form-control fw-bold" name="password" aria-label="Sizing example input"
+                            placeholder="Enter your password" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text fw-bold" id="inputGroup-sizing-default">UserName</span>
+                        <input type="text" class="form-control fw-bold" name="name" aria-label="Sizing example input"
+                            placeholder="Enter your Name" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <button type="submit" class="me-1 btn btn-success fw-bold">Submit</button>
+                    <!-- <button type="button" class="me-1 btn btn-danger fw-bold">Delete</button> -->
+                    <button type="reset" class="me-1 btn btn-warning fw-bold">Reset</button>
+                </form>
+            </div>
+
+            <a href="/user/auth/google" class="btn btn-outline-danger fw-bold">Google Authentication</a>
+            <a href="/user/auth/github" class="btn btn-outline-warning mt-2 fw-bold">Github Authentication</a>
+        </div>
+    </div>
+</div>

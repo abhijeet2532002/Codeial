@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-sm-9 mb-3 mb-sm-0">
+        <div class="card">
+            <div class="card-body">
+                <% for(userInfo of data) { %>
+                    <figure class="border border-2 border-danger">
+                        <blockquote class="blockquote m-0 px-2 fw-bolder">
+                            <p class="d-inline">
+                                <%= userInfo.name %>
+                            </p>
+                        </blockquote>
+
+                        <figcaption class="blockquote-footer text-end fw-bolder mb-2 px-2">
+
+                            <% if(locals.user.id != userInfo.id) { %>
+                                <a class="btn btn-outline-success me-2" href="/friend/?id=<%= userInfo.id %>">Add
+                                    Friend</a>
+                                <% } %>
+                        </figcaption>
+                    </figure>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+</div>

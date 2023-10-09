@@ -1,0 +1,32 @@
+<div class="card border border-0">
+    <% for(comment of posts.comment) { %>
+
+        <figure class="text-start border border-2 border-success px-2 rounded-3 mb-1">
+            <blockquote class="blockquote m-0">
+                <p class="d-inline">
+                    <%= comment.msg %>
+                </p>
+            </blockquote>
+
+            <figcaption class="blockquote-footer text-end fw-bolder mb-2">
+                <small>
+                    <% if (locals.user){ %>
+                        <a class="toggle-like-button me-2 fw-bold fs-6" data-likes="<%= comment.likes.length %>"
+                            href="/likes/toggle/?id=<%=comment._id%>&type=comment">
+                            <%= comment.likes.length %> Likes
+                        </a>
+                        <% }else{ %>
+                            <%= posts.likes.length %> Likes
+                                <% } %>
+                </small>
+                <% if(locals.user.id==comment.user.id) { %>
+                    <a class="btn btn-outline-danger me-2" href="/comment/delete/<%= comment._id %>">Delete</a>
+                    <% } %>
+                        <%= comment.user.name %>
+            </figcaption>
+
+        </figure>
+
+        <% } %>
+
+</div>

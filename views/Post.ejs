@@ -1,0 +1,34 @@
+<div class="row mb-3">
+    <div class="col-9 m-auto">
+        <div class="card mb-3">
+            <div class="card-header text-center m-0 p-0">
+                <h4><u>&nbsp;Post Area&nbsp;</u></h4>
+            </div>
+            <div class="card-body m-2 p-0">
+                <form action="/post/create" method="post" id="create-posts-buttom">
+                    <div class="input-group mb-2">
+                        <span class="input-group-text fw-bold fs-2">Post : </span>
+                        <textarea class="form-control fw-bold" name="content" aria-label="With textarea"
+                            placeholder="Enter post here ....."></textarea>
+                    </div>
+                    <button type="submit" class="me-1 btn btn-success fw-bold">Submit</button>
+                    <button type="reset" class="me-1 btn btn-warning fw-bold">Reset</button>
+                </form>
+
+            </div>
+        </div>
+        <div id="post-container">
+            <ul>
+                <% for(posts of postInfo) {%>
+                    <%- include('_post') -%>
+
+                        <%}%>
+            </ul>
+        </div>
+
+    </div>
+    <a href="/user/logout">SignOut</a>
+</div>
+
+<script src="/js/AjaxScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
